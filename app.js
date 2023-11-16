@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'production'){
 }
 
 // data base setup
-mongoose.connect('mongodb://127.0.0.1:27017') 
+mongoose.connect(process.env.DATABASE_URL) 
   .then(() => console.log('💽 Database connected'))
   .catch(error => console.error(error))
 
@@ -114,8 +114,6 @@ app.post('/api/ContactForm',async (req, res) => {
 app.get('/api/Homepage', checkAuthenticated, async (req, res) => {
  const email = req.session.user.email
  const tasks = await TodoTask.find({email: email})
- console.log(email)
- console.log(tasks)
   if (tasks.length>0) {
     res.render('HomePage/index', {name: req.session.user.name, todoTasks: tasks } )
   }
