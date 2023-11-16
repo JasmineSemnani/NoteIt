@@ -219,7 +219,7 @@ app.route("/remove/:id").get(async(req, res) => {
 });
 
 
-const PORT = 3000
+
 app.listen(PORT, () => {
-  console.log(`👋 Started server on port ${PORT}`)
+  console.log(`👋 Started server on port ${process.env.PORT}`)
 });
