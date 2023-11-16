@@ -10,9 +10,6 @@ const session = require('express-session')
 const initializePassport = require('./passport/passport-config.js')
 const {checkAuthenticated,checkNotAuthenticated} = require('./middleware/authentication-middleware.js')
 
-if (process.env.NODE_ENV !== 'production'){
-  require('dotenv').config()
-}
 
 
 
