@@ -1,3 +1,5 @@
 runtime: nodejs18
-
 instance_class: F1
+
+env_variables:
+  DATABASE_URL:"mongodb+srv://admin:0BCPpzU2q6oh2fgg@cluster0.wzhpbnh.mongodb.net/noteit?retryWrites=true&w=majority"
