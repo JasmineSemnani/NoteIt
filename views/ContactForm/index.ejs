@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ <%- include('../includes/head', {title: 'Contact Form | NoteIT'}) %>
+
+ <body>
+    <div class="container1">
+        <div class="form-box1">
+            <h4>Write me!</h4>
+            <form action="/api/ContactForm" method="POST">
+                <div class="input-group1">
+                    <div class="input-field1">
+                        <input name="name" type="text" placeholder="Name" required>
+                    </div>
+                </div> 
+
+                <div class="input-group1">
+                    <div class="input-field1">
+                        <input name="email" type="email" placeholder="Email" required>
+                    </div>
+                </div>
+
+                <div class="input-group1">
+                    <div class="input-field1">
+                        <textarea name="message" type="message" placeholder="Message" required></textarea>
+                    </div>
+                </div>
+            
+                <div class="btn-field1">
+                    <button type="submit">Send</button> 
+                </div>
+            </form> 
+        </div>
+    </div>
+</body>
+</html>

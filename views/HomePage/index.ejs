@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<%- include('../includes/head') , {title: 'Your HomePage | NoteIT'} %>
+<body>
+    <div class="main">
+<h3>Hello <%= name %>! </h3>
+
+    <div class="todo-container">
+    <h6>To-Do List</h6>
+            <div class="todo">
+                <form action="/api/HomePage" method="POST" class="todo-header">
+                    <div>
+                        <input class="pasted" type="text" name="content">
+                    </div>
+                    <button type="submit">Add Task</button>
+                </form>
+                <ul class="todo-list">
+                   <%todoTasks.forEach(details => { %> 
+                    <li class="todo-list-item">
+
+                    <div class="todo-list-item-name"><%= details.content %></div>
+                    
+                    <a href="/remove/<%= details._id %>" class="deleteButon">
+                        <span class="fas fa-times">Remove</span>
+                    </a>
+                </li>
+                 <% }) %>
+            </ul>
+        </div>
+    </div>
+</div>  
+</body>
+
+
+
+<footer class="Logout">
+    <form action='/api/logout' method="POST">
+    <button type="submit">Log Out</button>
+    </form>
+</footer>
+</html>
