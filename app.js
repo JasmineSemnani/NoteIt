@@ -220,6 +220,6 @@ app.route("/remove/:id").get(async(req, res) => {
 
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`👋 Started server on port ${process.env.PORT}`)
 });
