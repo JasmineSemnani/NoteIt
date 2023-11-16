@@ -15,6 +15,8 @@ if (process.env.NODE_ENV !== 'production'){
   require('dotenv').config()
 }
 
+
+
 // data base setup
 mongoose.connect(process.env.DATABASE_URL) 
   .then(() => console.log('💽 Database connected'))
