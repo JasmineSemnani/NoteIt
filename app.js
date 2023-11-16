@@ -9,11 +9,11 @@ const flash = require('express-flash')
 const session = require('express-session')
 const initializePassport = require('./passport/passport-config.js')
 const {checkAuthenticated,checkNotAuthenticated} = require('./middleware/authentication-middleware.js')
-
+require('dotenv').config()
 
 
 // data base setup
-mongoose.connect("mongodb+srv://admin:0BCPpzU2q6oh2fgg@cluster0.wzhpbnh.mongodb.net/noteit?retryWrites=true&w=majority") 
+mongoose.connect(process.env.DATABASE_URL) 
   .then(() => console.log('💽 Database connected'))
   .catch(error => console.error(error))
 
@@ -36,7 +36,7 @@ app.use(logger)
 app.use(express.static('public'))
 app.use(flash())
 app.use(session({
-  secret: 'oiahdowih213',
+  secret: process.env.SESSION_SECRET,
   resave: true,
   saveUninitialized: false
 }))
