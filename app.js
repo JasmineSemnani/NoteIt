@@ -13,7 +13,7 @@ require('dotenv').config()
 
 
 // data base setup
-mongoose.connect(process.env.DATABASE_URL) 
+mongoose.connect('mongodb+srv://admin:0BCPpzU2q6oh2fgg@cluster0.wzhpbnh.mongodb.net/noteit?retryWrites=true&w=majority') 
   .then(() => console.log('💽 Database connected'))
   .catch(error => console.error(error))
 
@@ -36,7 +36,7 @@ app.use(logger)
 app.use(express.static('public'))
 app.use(flash())
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret: 'aoujwdoih123o3ih',
   resave: true,
   saveUninitialized: false
 }))
